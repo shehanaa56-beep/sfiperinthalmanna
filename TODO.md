@@ -1,13 +1,10 @@
-# TODO: Implement Admin Login and Dashboard
+# Responsiveness Enhancement Plan
 
 ## Tasks
-- [x] Add "Login" button to Navbar that navigates to /admin/login
-- [x] Update auth.ts to use credentials: 'sfiperinthalmanna@gmail.com' / 'sfisfi'
-- [x] Fix AdminDashboard loadData initialization error
-- [x] Fix Firebase permissions error for adding donors
-- [x] Test login flow and donor management in AdminDashboard
-- [x] Deploy updated Firestore security rules
+- [x] Enhance Home.tsx responsiveness: Add sm: and lg: breakpoints for better mobile and large screen display
+- [x] Enhance Donors.tsx responsiveness: Improve grid layout for small screens and add more breakpoints
+- [x] Test responsiveness on different screen sizes using browser dev tools (App running on http://localhost:8081/)
 
-## Completed
-- [x] Analyze existing code and create plan
-- [x] Get user approval for plan
+## Details
+- Home.tsx: Adjust hero section grid, button layouts, text sizes, and image sizing for better scaling.
+- Donors.tsx: Ensure donor cards grid starts at 1 column on very small screens, scales to 2, then 3, then 4. Improve search/filter layout.

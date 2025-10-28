@@ -61,31 +61,32 @@ const Donors = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Blood Donors Directory
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Search and connect with blood donors across Kerala
-            </p>
+           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
+  രക്തദാതാക്കളുടെ ഡയറക്ടറി
+</h1>
+<p className="text-base sm:text-lg text-muted-foreground">
+  കേരളമൊട്ടാകെ രക്തദാതാക്കളെ തിരഞ്ഞ് ബന്ധപ്പെടൂ
+</p>
+
           </div>
 
           {/* Search and Filter */}
-          <div className="glass-effect rounded-2xl p-6 mb-8 shadow-glass">
-            <div className="grid md:grid-cols-2 gap-4">
+          <div className="glass-effect rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 shadow-glass">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
                 <Input
                   placeholder="Search by name or phone..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 bg-background/50"
+                  className="pl-9 sm:pl-10 bg-background/50 text-sm sm:text-base"
                 />
               </div>
-              
+
               <div className="relative">
-                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground z-10" />
+                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground z-10" />
                 <Select value={selectedBloodGroup} onValueChange={setSelectedBloodGroup}>
-                  <SelectTrigger className="pl-10 bg-background/50">
+                  <SelectTrigger className="pl-9 sm:pl-10 bg-background/50 text-sm sm:text-base">
                     <SelectValue placeholder="Filter by blood group" />
                   </SelectTrigger>
                   <SelectContent className="bg-popover backdrop-blur-xl z-50">
@@ -109,11 +110,11 @@ const Donors = () => {
 
           {/* Donor Cards Grid */}
           {loading ? (
-            <div className="flex items-center justify-center py-12">
-              <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-red-600"></div>
+            <div className="flex items-center justify-center py-8 sm:py-12">
+              <div className="animate-spin rounded-full h-24 w-24 sm:h-32 sm:w-32 border-b-2 border-red-600"></div>
             </div>
           ) : filteredDonors.length > 0 ? (
-            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
               {filteredDonors.map((donor) => (
                 <DonorCard
                   key={donor.id}
@@ -124,8 +125,8 @@ const Donors = () => {
               ))}
             </div>
           ) : (
-            <div className="glass-effect rounded-2xl p-12 text-center shadow-glass">
-              <p className="text-lg text-muted-foreground">
+            <div className="glass-effect rounded-2xl p-8 sm:p-12 text-center shadow-glass">
+              <p className="text-base sm:text-lg text-muted-foreground">
                 {donors.length === 0
                   ? "No donors available in the database."
                   : "No donors found matching your criteria. Try adjusting your search."

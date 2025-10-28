@@ -132,7 +132,7 @@ const Contact = () => {
             <Button className="shadow-glow text-sm md:text-base w-full sm:w-auto">
               <Phone className="w-4 h-4 mr-2" />
               <span className="hidden sm:inline">Call Emergency Helpline- </span>
-              +91 75939 16112
+              +91 90480 98546
             </Button>
           </div>
         </div>
